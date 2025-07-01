@@ -5,14 +5,27 @@ class PasswordResetsController < ApplicationController
   def create
     @user = User.find_by(email: params[:email])
 
-    puts '*************************'
-    puts @user.email
-    puts '*************************'
-
-    if @user.present?
-      # send email
-    end
+    PasswordMailer.with(user: @user).reset.deliver_later if @user.present?
 
     redirect_to root_path, notice: 'Email has been sent! Check your inbox'
+  end
+
+  def edit
+    @user = User.find_signed!(params[:token], purpose: 'password_reset')
+  rescue  ActiveSupport::MessageVerifier::InvalidSignature
+    redirect_to sign_in_path, alert: 'Link is expired!'
+  end
+
+  def update
+    @user = User.find_signed!(params[:token], purpose: 'password_reset')
+    return unless @user.update(password_params)
+
+    redirect_to sign_in_path, notice: 'Your password has been successfully changed!'
+  end
+
+  private
+
+  def password_params
+    params.require(:user).permit(:password, :password_confirmation)
   end
 end

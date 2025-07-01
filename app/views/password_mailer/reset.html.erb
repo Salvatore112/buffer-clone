@@ -1,5 +1,5 @@
-<h1>Password#rest</h1>
+Hi, <%= params[:user].email %>. Someone sent a password reset request.
 
-<p>
-  <%= @greeting %>, find me in app/views/password_mailer/rest.html.erb
-</p>
+To reset your password, click on this link <%= link_to "Reset password", password_reset_edit_url(token: @token) %> .
+
+If it wasn't you, then ignore this letter.

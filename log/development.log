@@ -11557,3 +11557,217 @@ Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms (0 queries, 0 ca
 ActiveSupport::MessageVerifier::InvalidSignature (invalid message string):
   
 app/controllers/password_resets_controller.rb:20:in 'PasswordResetsController#update'
+Started GET "/password" for 127.0.0.1 at 2025-07-02 04:05:52 +0900
+Processing by PasswordsController#edit as HTML
+Redirected to http://127.0.0.1:3000/sign-in
+Filter chain halted as :require_user_logged_in! rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/sign-in" for 127.0.0.1 at 2025-07-02 04:05:52 +0900
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.8ms)
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/sign-in" for 127.0.0.1 at 2025-07-02 04:05:58 +0900
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.5ms | GC: 0.8ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.8ms)
+Completed 200 OK in 8ms (Views: 2.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/password/reset" for 127.0.0.1 at 2025-07-02 04:05:59 +0900
+Processing by PasswordResetsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started POST "/password/reset" for 127.0.0.1 at 2025-07-02 04:06:04 +0900
+Processing by PasswordResetsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "email" => "[FILTERED]", "commit" => "Recover password"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'test@email.com' LIMIT 1 /*action='create',application='BlogProject',controller='password_resets'*/[0m
+  ↳ app/controllers/password_resets_controller.rb:6:in 'PasswordResetsController#create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 82887f01-493f-4702-a947-d525f6904760) to Async(default) with arguments: "PasswordMailer", "reset", "deliver_now", {params: {user: #<GlobalID:0x00007f706a6ce008 @uri=#<URI::GID gid://blog-project/User/9>>}, args: []}
+[ActiveJob] ↳ app/controllers/password_resets_controller.rb:8:in 'PasswordResetsController#create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 14ms (ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [82887f01-493f-4702-a947-d525f6904760]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1 /*application='BlogProject'*/[0m
+[ActiveJob] [ActionMailer::MailDeliveryJob] [82887f01-493f-4702-a947-d525f6904760] Performing ActionMailer::MailDeliveryJob (Job ID: 82887f01-493f-4702-a947-d525f6904760) from Async(default) enqueued at 2025-07-01T19:06:04.654431245Z with arguments: "PasswordMailer", "reset", "deliver_now", {params: {user: #<GlobalID:0x00007f706a6c1970 @uri=#<URI::GID gid://blog-project/User/9>>}, args: []}
+Started GET "/" for 127.0.0.1 at 2025-07-02 04:06:04 +0900
+[ActiveJob] [ActionMailer::MailDeliveryJob] [82887f01-493f-4702-a947-d525f6904760]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [82887f01-493f-4702-a947-d525f6904760]   Rendering password_mailer/reset.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [82887f01-493f-4702-a947-d525f6904760]   Rendered password_mailer/reset.html.erb within layouts/mailer (Duration: 1.4ms | GC: 0.6ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [82887f01-493f-4702-a947-d525f6904760]   Rendered layout layouts/mailer.html.erb (Duration: 1.9ms | GC: 0.6ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [82887f01-493f-4702-a947-d525f6904760]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [82887f01-493f-4702-a947-d525f6904760]   Rendering password_mailer/reset.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [82887f01-493f-4702-a947-d525f6904760]   Rendered password_mailer/reset.text.erb within layouts/mailer (Duration: 0.2ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [82887f01-493f-4702-a947-d525f6904760]   Rendered layout layouts/mailer.text.erb (Duration: 0.4ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [82887f01-493f-4702-a947-d525f6904760] PasswordMailer#reset: processed outbound mail in 8.9ms
+Processing by MainController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.4ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.4ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | GC: 1.2ms)
+Completed 200 OK in 11ms (Views: 3.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 3.3ms)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [82887f01-493f-4702-a947-d525f6904760] Delivered mail 6864319ca36fe_240f428b0-188@pasha-RLEF-XX.mail (119.1ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [82887f01-493f-4702-a947-d525f6904760] Date: Wed, 02 Jul 2025 04:06:04 +0900
+From: from@example.com
+To: test@email.com
+Message-ID: <6864319ca36fe_240f428b0-188@pasha-RLEF-XX.mail>
+Subject: Reset
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_6864319ca23b9_240f428b0-26a";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_6864319ca23b9_240f428b0-26a
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi, test@email.com. Someone sent a password reset request.
+
+To reset your password, click on this link http://localhost:3000/password/reset/edit?token=eyJfcmFpbHMiOnsiZGF0YSI6OSwiZXhwIjoiMjAyNS0wNy0wMVQxOToyMTowNC42NjBaIiwicHVyIjoidXNlci9wYXNzd29yZF9yZXNldCJ9fQ--39a51e5d9022439d46df05399d9431fee4568ad6546a447e6a744cc8e18620a5 .
+
+If it wasn't you, then ignore this letter.
+
+----==_mimepart_6864319ca23b9_240f428b0-26a
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!-- BEGIN app/views/layouts/mailer.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!-- BEGIN app/views/password_mailer/reset.html.erb -->Hi, test@email.com. Someone sent a password reset request.
+
+To reset your password, click on this link <a href="http://localhost:3000/password/reset/edit?token=eyJfcmFpbHMiOnsiZGF0YSI6OSwiZXhwIjoiMjAyNS0wNy0wMVQxOToyMTowNC42NjBaIiwicHVyIjoidXNlci9wYXNzd29yZF9yZXNldCJ9fQ--39a51e5d9022439d46df05399d9431fee4568ad6546a447e6a744cc8e18620a5">Reset password</a> .
+
+If it wasn't you, then ignore this letter.<!-- END app/views/password_mailer/reset.html.erb -->
+  </body>
+</html>
+<!-- END app/views/layouts/mailer.html.erb -->
+----==_mimepart_6864319ca23b9_240f428b0-26a--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [82887f01-493f-4702-a947-d525f6904760] Performed ActionMailer::MailDeliveryJob (Job ID: 82887f01-493f-4702-a947-d525f6904760) from Async(default) in 130.48ms
+Started GET "/password/reset/edit?token=[FILTERED]" for ::1 at 2025-07-02 04:06:09 +0900
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"token" => "[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1 /*action='edit',application='BlogProject',controller='password_resets'*/[0m
+  ↳ app/controllers/password_resets_controller.rb:14:in 'PasswordResetsController#edit'
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered password_resets/edit.html.erb within layouts/application (Duration: 2.5ms | GC: 1.3ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | GC: 1.7ms)
+Completed 200 OK in 14ms (Views: 3.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 4.2ms)
+
+
+Started PATCH "/password/reset/edit?token=[FILTERED]" for ::1 at 2025-07-02 04:06:11 +0900
+Processing by PasswordResetsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"password" => "[FILTERED]", "password_confirmation" => "[FILTERED]"}, "commit" => "Reset password", "token" => "[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1 /*action='update',application='BlogProject',controller='password_resets'*/[0m
+  ↳ app/controllers/password_resets_controller.rb:20:in 'PasswordResetsController#update'
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered password_resets/edit.html.erb within layouts/application (Duration: 2.4ms | GC: 1.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 2.0ms)
+Completed 422 Unprocessable Content in 190ms (Views: 4.5ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 6.8ms)
+
+
+Started PATCH "/password/reset/edit?token=[FILTERED]" for ::1 at 2025-07-02 04:06:18 +0900
+Processing by PasswordResetsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"password" => "[FILTERED]", "password_confirmation" => "[FILTERED]"}, "commit" => "Reset password", "token" => "[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1 /*action='update',application='BlogProject',controller='password_resets'*/[0m
+  ↳ app/controllers/password_resets_controller.rb:20:in 'PasswordResetsController#update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='BlogProject',controller='password_resets'*/[0m
+  ↳ app/controllers/password_resets_controller.rb:21:in 'PasswordResetsController#update'
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = '$2a$12$/F3RNBAh4OYNnL/MHXDhZucOmI4MZHV0J32MoBJSI45tQSfkV9h7C', "updated_at" = '2025-07-01 19:06:18.342724' WHERE "users"."id" = 9 /*action='update',application='BlogProject',controller='password_resets'*/[0m
+  ↳ app/controllers/password_resets_controller.rb:21:in 'PasswordResetsController#update'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='BlogProject',controller='password_resets'*/[0m
+  ↳ app/controllers/password_resets_controller.rb:21:in 'PasswordResetsController#update'
+Redirected to http://localhost:3000/sign-in
+Completed 302 Found in 188ms (ActiveRecord: 4.7ms (2 queries, 0 cached) | GC: 1.5ms)
+
+
+Started GET "/sign-in" for ::1 at 2025-07-02 04:06:18 +0900
+Processing by SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/password/reset" for ::1 at 2025-07-02 04:06:18 +0900
+Processing by PasswordResetsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 1.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/sign-in" for ::1 at 2025-07-02 04:06:25 +0900
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "email" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Save "}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'test@email.com' LIMIT 1 /*action='create',application='BlogProject',controller='sessions'*/[0m
+  ↳ app/controllers/sessions_controller.rb:6:in 'SessionsController#create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 179ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-07-02 04:06:25 +0900
+Processing by MainController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:7:in 'ApplicationController#set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 1.2ms | ActiveRecord: 0.1ms (2 queries, 1 cached) | GC: 0.0ms)
+
+

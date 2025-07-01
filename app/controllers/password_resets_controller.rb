@@ -18,9 +18,11 @@ class PasswordResetsController < ApplicationController
 
   def update
     @user = User.find_signed!(params[:token], purpose: 'password_reset')
-    return unless @user.update(password_params)
-
-    redirect_to sign_in_path, notice: 'Your password has been successfully changed!'
+    if @user.update(password_params)
+      redirect_to sign_in_path, notice: 'Your password has been successfully changed!'
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   private

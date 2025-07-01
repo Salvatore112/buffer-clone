@@ -5961,3 +5961,767 @@ Processing by RegistrationsController#create as TURBO_STREAM
 Completed 422 Unprocessable Content in 17ms (Views: 8.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 7.3ms)
 
 
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 19:53:01 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BlogProject'*/[0m
+Processing by MainController#index as HTML
+  Parameters: {"notice" => "congrats"}
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | GC: 0.0ms)
+Completed 200 OK in 26ms (Views: 6.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/about-us" for ::1 at 2025-07-01 19:53:02 +0900
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-07-01 19:53:03 +0900
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 1.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BlogProject'*/[0m
+Started GET "/sign-up" for ::1 at 2025-07-01 19:53:07 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 3.6ms | ActiveRecord: 0.8ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BlogProject'*/[0m
+Started POST "/sign-up" for ::1 at 2025-07-01 19:53:33 +0900
+Processing by RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"email" => "[FILTERED]", "password" => "[FILTERED]", "password_confirmation" => "[FILTERED]"}, "commit" => "Create User"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='BlogProject',controller='registrations'*/[0m
+  ↳ app/controllers/registrations_controller.rb:8:in 'RegistrationsController#create'
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ('aa@aa.', '$2a$12$uN.O2WcaXuzQagAFnQpjmeYsBT3znRPp4OMHNXfkIvpmyeb53j3Em', '2025-07-01 10:53:33.673010', '2025-07-01 10:53:33.673010') RETURNING "id" /*action='create',application='BlogProject',controller='registrations'*/[0m
+  ↳ app/controllers/registrations_controller.rb:8:in 'RegistrationsController#create'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='BlogProject',controller='registrations'*/[0m
+  ↳ app/controllers/registrations_controller.rb:8:in 'RegistrationsController#create'
+Redirected to http://localhost:3000/?notice=congrats
+Completed 302 Found in 182ms (ActiveRecord: 4.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 19:53:33 +0900
+Processing by MainController#index as TURBO_STREAM
+  Parameters: {"notice" => "congrats"}
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BlogProject'*/[0m
+Started GET "/sign-up" for ::1 at 2025-07-01 19:53:47 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 2.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/sign-up" for ::1 at 2025-07-01 19:53:54 +0900
+Processing by RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"email" => "[FILTERED]", "password" => "[FILTERED]", "password_confirmation" => "[FILTERED]"}, "commit" => "Create User"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='BlogProject',controller='registrations'*/[0m
+  ↳ app/controllers/registrations_controller.rb:8:in 'RegistrationsController#create'
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ('qqq@qq.qq', '$2a$12$mvLuqgLy.EURbHvNm/K3au5SuUrlnD9x1ZsDIvhGUm/vI0.vs5Ks6', '2025-07-01 10:53:55.027666', '2025-07-01 10:53:55.027666') RETURNING "id" /*action='create',application='BlogProject',controller='registrations'*/[0m
+  ↳ app/controllers/registrations_controller.rb:8:in 'RegistrationsController#create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='BlogProject',controller='registrations'*/[0m
+  ↳ app/controllers/registrations_controller.rb:8:in 'RegistrationsController#create'
+Redirected to http://localhost:3000/?notice=congrats
+Completed 302 Found in 178ms (ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 19:53:55 +0900
+Processing by MainController#index as TURBO_STREAM
+  Parameters: {"notice" => "congrats"}
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BlogProject'*/[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='BlogProject'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BlogProject'*/[0m
+Started GET "/sign-up" for ::1 at 2025-07-01 19:56:39 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 3.7ms | ActiveRecord: 0.5ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/sign-up" for ::1 at 2025-07-01 19:56:49 +0900
+Processing by RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"email" => "[FILTERED]", "password" => "[FILTERED]", "password_confirmation" => "[FILTERED]"}, "commit" => "Create User"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='BlogProject',controller='registrations'*/[0m
+  ↳ app/controllers/registrations_controller.rb:8:in 'RegistrationsController#create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ('awa@aa.aa', '$2a$12$WQC2d6yX74SV6.PZY0hYPuSFVTsTfcchskfVEZqTnWWfA0qnBYulW', '2025-07-01 10:56:49.743075', '2025-07-01 10:56:49.743075') RETURNING "id" /*action='create',application='BlogProject',controller='registrations'*/[0m
+  ↳ app/controllers/registrations_controller.rb:8:in 'RegistrationsController#create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='BlogProject',controller='registrations'*/[0m
+  ↳ app/controllers/registrations_controller.rb:8:in 'RegistrationsController#create'
+Redirected to http://localhost:3000/?notice=congrats
+Completed 302 Found in 181ms (ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 19:56:49 +0900
+Processing by MainController#index as TURBO_STREAM
+  Parameters: {"notice" => "congrats"}
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | GC: 10.4ms)
+Completed 200 OK in 17ms (Views: 11.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 10.4ms)
+
+
+Started GET "/sign-up" for ::1 at 2025-07-01 19:57:34 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.5ms | GC: 0.2ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.2ms)
+Completed 200 OK in 13ms (Views: 3.8ms | ActiveRecord: 0.9ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started POST "/sign-up" for ::1 at 2025-07-01 19:57:37 +0900
+Processing by RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"email" => "[FILTERED]", "password" => "[FILTERED]", "password_confirmation" => "[FILTERED]"}, "commit" => "Create User"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='BlogProject',controller='registrations'*/[0m
+  ↳ app/controllers/registrations_controller.rb:8:in 'RegistrationsController#create'
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ('aa', '$2a$12$NyVDcIfDz2Iq3JaXIS3l1Omn822cHi4sdYUPV1zsYiR4596sqW.La', '2025-07-01 10:57:37.496788', '2025-07-01 10:57:37.496788') RETURNING "id" /*action='create',application='BlogProject',controller='registrations'*/[0m
+  ↳ app/controllers/registrations_controller.rb:8:in 'RegistrationsController#create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='BlogProject',controller='registrations'*/[0m
+  ↳ app/controllers/registrations_controller.rb:8:in 'RegistrationsController#create'
+Redirected to http://localhost:3000/?notice=congrats
+Completed 302 Found in 186ms (ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 19:57:37 +0900
+Processing by MainController#index as TURBO_STREAM
+  Parameters: {"notice" => "congrats"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 1.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/sign-up" for ::1 at 2025-07-01 19:58:52 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 2.4ms)
+Completed 200 OK in 15ms (Views: 6.4ms | ActiveRecord: 0.5ms (0 queries, 0 cached) | GC: 2.5ms)
+
+
+Started POST "/sign-up" for ::1 at 2025-07-01 19:58:57 +0900
+Processing by RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"email" => "[FILTERED]", "password" => "[FILTERED]", "password_confirmation" => "[FILTERED]"}, "commit" => "Create User"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='BlogProject',controller='registrations'*/[0m
+  ↳ app/controllers/registrations_controller.rb:8:in 'RegistrationsController#create'
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ('aa@aaa', '$2a$12$czpqIH7mmSSi3WJzsAlmFOD4D6io6mqOK1hY.jMQiQN7i9WNdK4HC', '2025-07-01 10:58:57.511799', '2025-07-01 10:58:57.511799') RETURNING "id" /*action='create',application='BlogProject',controller='registrations'*/[0m
+  ↳ app/controllers/registrations_controller.rb:8:in 'RegistrationsController#create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='BlogProject',controller='registrations'*/[0m
+  ↳ app/controllers/registrations_controller.rb:8:in 'RegistrationsController#create'
+Redirected to http://localhost:3000/?notice=congrats
+Completed 302 Found in 181ms (ActiveRecord: 1.3ms (1 query, 0 cached) | GC: 3.6ms)
+
+
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 19:58:57 +0900
+Processing by MainController#index as TURBO_STREAM
+  Parameters: {"notice" => "congrats"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 7 LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.4ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.7ms)
+Completed 200 OK in 10ms (Views: 2.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 2.4ms)
+
+
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 19:59:01 +0900
+Processing by MainController#index as HTML
+  Parameters: {"notice" => "congrats"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 7 LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.5ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 1.0ms)
+Completed 200 OK in 11ms (Views: 2.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 2.7ms)
+
+
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 19:59:01 +0900
+Processing by MainController#index as HTML
+  Parameters: {"notice" => "congrats"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 7 LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.2ms)
+Completed 200 OK in 14ms (Views: 1.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 19:59:02 +0900
+Processing by MainController#index as HTML
+  Parameters: {"notice" => "congrats"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 7 LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 1.1ms)
+Completed 200 OK in 11ms (Views: 2.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 2.7ms)
+
+
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 19:59:02 +0900
+Processing by MainController#index as HTML
+  Parameters: {"notice" => "congrats"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 7 LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.4ms)
+Completed 200 OK in 10ms (Views: 1.5ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 19:59:03 +0900
+Processing by MainController#index as HTML
+  Parameters: {"notice" => "congrats"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 7 LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 1.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 19:59:03 +0900
+Processing by MainController#index as HTML
+  Parameters: {"notice" => "congrats"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 7 LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 0.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 19:59:03 +0900
+Processing by MainController#index as HTML
+  Parameters: {"notice" => "congrats"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 7 LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 1.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 19:59:04 +0900
+Processing by MainController#index as HTML
+  Parameters: {"notice" => "congrats"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 7 LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 1.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 19:59:04 +0900
+Processing by MainController#index as HTML
+  Parameters: {"notice" => "congrats"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 7 LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 1.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 19:59:04 +0900
+Processing by MainController#index as HTML
+  Parameters: {"notice" => "congrats"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 7 LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 1.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/" for ::1 at 2025-07-01 19:59:12 +0900
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+NoMethodError (undefined method 'email' for nil):
+  
+app/controllers/main_controller.rb:4:in 'MainController#index'
+Started GET "/" for ::1 at 2025-07-01 19:59:27 +0900
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | GC: 0.2ms)
+Completed 200 OK in 12ms (Views: 3.1ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/assets/application-8b441ae0.css" for ::1 at 2025-07-01 19:59:27 +0900
+Started GET "/assets/stimulus-loading-1fc53fe7.js" for ::1 at 2025-07-01 19:59:27 +0900
+Started GET "/assets/stimulus.min-4b1e420e.js" for ::1 at 2025-07-01 19:59:27 +0900
+Started GET "/assets/controllers/hello_controller-708796bd.js" for ::1 at 2025-07-01 19:59:27 +0900
+Started GET "/assets/controllers/index-ee64e1f1.js" for ::1 at 2025-07-01 19:59:27 +0900
+Started GET "/assets/turbo.min-3a2e143f.js" for ::1 at 2025-07-01 19:59:27 +0900
+Started GET "/assets/application-bfcdf840.js" for ::1 at 2025-07-01 19:59:27 +0900
+Started GET "/assets/controllers/application-3affb389.js" for ::1 at 2025-07-01 19:59:27 +0900
+Started GET "/" for ::1 at 2025-07-01 19:59:34 +0900
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 7 LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 0.9ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 20:10:20 +0900
+Processing by MainController#index as HTML
+  Parameters: {"notice" => "congrats"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 7 LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.5ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | GC: 2.3ms)
+Completed 200 OK in 20ms (Views: 5.7ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 7.6ms)
+
+
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 20:15:56 +0900
+Processing by MainController#index as HTML
+  Parameters: {"notice" => "congrats"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 7 LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | GC: 0.3ms)
+Completed 200 OK in 15ms (Views: 3.8ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 1.5ms)
+
+
+Started POST "/?logout_path=delete" for ::1 at 2025-07-01 20:15:57 +0900
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 20:15:57 +0900
+Processing by MainController#index as HTML
+  Parameters: {"notice" => "congrats"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 7 LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 1.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/?logout_path=delete" for ::1 at 2025-07-01 20:15:58 +0900
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 20:15:58 +0900
+Processing by MainController#index as HTML
+  Parameters: {"notice" => "congrats"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 7 LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 1.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/?logout_path=delete" for ::1 at 2025-07-01 20:15:58 +0900
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 20:15:58 +0900
+Processing by MainController#index as HTML
+  Parameters: {"notice" => "congrats"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 7 LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 1.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/?logout_path=delete" for ::1 at 2025-07-01 20:16:34 +0900
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 20:16:34 +0900
+Processing by MainController#index as HTML
+  Parameters: {"notice" => "congrats"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 7 LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 2.7ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 20:16:35 +0900
+Processing by MainController#index as HTML
+  Parameters: {"notice" => "congrats"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 7 LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 1.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/logout" for ::1 at 2025-07-01 20:16:36 +0900
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.0ms)
+
+
+  
+NameError (undefined local variable or method 'sessions' for an instance of SessionsController):
+  
+app/controllers/sessions_controller.rb:3:in 'SessionsController#destroy'
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 20:16:49 +0900
+Processing by MainController#index as HTML
+  Parameters: {"notice" => "congrats"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 7 LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.9ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.6ms)
+Completed 200 OK in 15ms (Views: 3.6ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 1.5ms)
+
+
+Started DELETE "/logout" for ::1 at 2025-07-01 20:16:50 +0900
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+No template found for SessionsController#destroy, rendering head :no_content
+Completed 204 No Content in 7ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/logout" for ::1 at 2025-07-01 20:16:50 +0900
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+No template found for SessionsController#destroy, rendering head :no_content
+Completed 204 No Content in 7ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/logout" for ::1 at 2025-07-01 20:16:50 +0900
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+No template found for SessionsController#destroy, rendering head :no_content
+Completed 204 No Content in 6ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 20:17:57 +0900
+Processing by MainController#index as HTML
+  Parameters: {"notice" => "congrats"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.4ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.6ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 2.4ms)
+Completed 200 OK in 19ms (Views: 6.0ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 6.3ms)
+
+
+Started DELETE "/logout" for ::1 at 2025-07-01 20:17:58 +0900
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/" for ::1 at 2025-07-01 20:17:59 +0900
+Processing by MainController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 1.2ms)
+Completed 200 OK in 10ms (Views: 2.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 2.4ms)
+
+
+Started DELETE "/logout" for ::1 at 2025-07-01 20:17:59 +0900
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-07-01 20:17:59 +0900
+Processing by MainController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 1.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/sign-up" for ::1 at 2025-07-01 20:18:05 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 2.4ms | ActiveRecord: 0.2ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/" for ::1 at 2025-07-01 20:18:18 +0900
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.2ms)
+Completed 200 OK in 12ms (Views: 3.0ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started DELETE "/logout" for ::1 at 2025-07-01 20:18:19 +0900
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for ::1 at 2025-07-01 20:18:19 +0900
+Processing by MainController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/sign-up" for ::1 at 2025-07-01 20:18:21 +0900
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.2ms)
+Completed 200 OK in 10ms (Views: 2.5ms | ActiveRecord: 0.2ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started POST "/sign-up" for ::1 at 2025-07-01 20:18:30 +0900
+Processing by RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"email" => "[FILTERED]", "password" => "[FILTERED]", "password_confirmation" => "[FILTERED]"}, "commit" => "Create User"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='BlogProject',controller='registrations'*/[0m
+  ↳ app/controllers/registrations_controller.rb:8:in 'RegistrationsController#create'
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ('aaa@aaaaa', '$2a$12$tS9/l7qT6OXBzAqD6.S9wO4X72UsIXQotBdwHZUcuJ2lBq0h8gp.u', '2025-07-01 11:18:30.362556', '2025-07-01 11:18:30.362556') RETURNING "id" /*action='create',application='BlogProject',controller='registrations'*/[0m
+  ↳ app/controllers/registrations_controller.rb:8:in 'RegistrationsController#create'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='BlogProject',controller='registrations'*/[0m
+  ↳ app/controllers/registrations_controller.rb:8:in 'RegistrationsController#create'
+Redirected to http://localhost:3000/?notice=congrats
+Completed 302 Found in 186ms (ActiveRecord: 5.0ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/?notice=congrats" for ::1 at 2025-07-01 20:18:30 +0900
+Processing by MainController#index as TURBO_STREAM
+  Parameters: {"notice" => "congrats"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/logout" for ::1 at 2025-07-01 20:18:32 +0900
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-07-01 20:18:32 +0900
+Processing by MainController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-07-01 20:18:34 +0900
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 1.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-07-01 20:18:34 +0900
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 1.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-07-01 20:18:35 +0900
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='index',application='BlogProject',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:3:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 1.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
